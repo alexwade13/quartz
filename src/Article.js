@@ -1,13 +1,32 @@
 import React, { Component } from 'react';
-import articles from '../articles.json' 
+import filler from '../default-thumbnail.jpg';
 
 export default class Article extends React.Component {
 
   render(){
-    let {title, content} = this.props;
+    let {i, title, content} = this.props;
+    let title_style = "title "
+    let content_style = "content "
+    if(i%2 === 0){
+      title_style += "title_even"
+      content_style += "content_even"
+    } else {
+      title_style += "title_odd"
+      content_style += "content_odd"
+    }
 
     return(
-      <div className="article" dangerouslySetInnerHTML={{__html:content}}>
+      <div>
+        <div className={title_style} dangerouslySetInnerHTML={{__html:title}}>
+
+        </div>
+        <div className="image">
+          
+        </div>
+
+        <div className={content_style} dangerouslySetInnerHTML={{__html:content}}>
+
+        </div>
 
       </div>)
   }

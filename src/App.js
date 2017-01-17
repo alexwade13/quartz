@@ -10,7 +10,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      articleNo:0
+      articleNo:3
     };
   }
 
@@ -18,7 +18,9 @@ class App extends Component {
     console.log(article,"art")
 
     return (
-      <Article title={article.title} content={article.content}/>
+      <div key={i}>
+        <Article i={i} className="article" title={article.title} content={article.content}/>
+      </div>
       )
 
   }
@@ -27,7 +29,7 @@ class App extends Component {
     let list = []
     
     for(let i = 0; i <= articleNo; i++){
-      list.push(this.renderArticle(i,articles.items[0]))
+      list.push(this.renderArticle(i,articles.items[i]))
     }
     return (
       <div className="App">
