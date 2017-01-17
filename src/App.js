@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import articles from '../articles.json' 
 import Article from './Article.js'
+import $ from 'jquery'; 
 
 class App extends Component {
 
@@ -10,12 +11,12 @@ class App extends Component {
     super(props);
 
     this.state = {
-      articleNo:3
+      articleNo:0
     };
   }
 
   renderArticle(i,article){
-    console.log(article,"art")
+    // console.log(article,"art")
 
     return (
       <div key={i}>
@@ -24,6 +25,19 @@ class App extends Component {
       )
 
   }
+
+  componentWillMount(){
+    console.log("mounted",this.state)
+    
+
+    $(window).scroll(()=> {   
+       if($(window).scrollTop() + $(window).height() >= $(document).height()*.95) {
+          this.setState({articleNo:this.state.articleNo+1})
+           console.log("bottom",this.state)
+       }
+    });
+  };
+  
   render() {
     let {articleNo} = this.state
     let list = []

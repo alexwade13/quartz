@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import filler from '../default-thumbnail.jpg';
+import filler from './default-thumbnail.jpg';
 
 export default class Article extends React.Component {
 
@@ -17,11 +17,11 @@ export default class Article extends React.Component {
 
     return(
       <div>
-        <div className={title_style} dangerouslySetInnerHTML={{__html:title}}>
+        <h2 className={title_style} dangerouslySetInnerHTML={{__html:title}}/>
 
-        </div>
+        
         <div className="image">
-          
+          <img className="filler" src={filler}   />
         </div>
 
         <div className={content_style} dangerouslySetInnerHTML={{__html:content}}>

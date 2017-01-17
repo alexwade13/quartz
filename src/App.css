@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  width:320px;
 }
 
 .App-logo {
@@ -65,31 +66,9 @@
   background: #F9F9F9
 }
 
-
-.overlay{
-    background-color: rgba(55, 155, 55, 0.5);
-    bottom: 0;
-    left: 0;
-    opacity: 0.5;
-    position: relative;
-    right:0;
-    top:0;
-    z-index: 1;
-    height:180px;
-    
-}
-
 img{
   height:180px;
   width:100%;
   display: block;
 }
 
-.image{
-  background-image: url(http://xpenology.org/wp-content/themes/qaengine/img/default-thumbnail.jpg);
-  position: relative;
-  display: inline-block;
-
-}
-
-.image:hover{visibility: hidden;}
