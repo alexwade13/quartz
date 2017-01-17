@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  width:320px;
+  width:455px;
 }
 
 .App-logo {
@@ -66,9 +66,24 @@
   background: #F9F9F9
 }
 
-img{
+.filler{
   height:180px;
   width:100%;
   display: block;
+}
+
+.arrow{
+  height:40px;
+  width:40px;
+
+   position: fixed;
+   bottom: 0;
+   right: 0;
+}
+
+.bottom {
+  
+  bottom:0;
+  height:2px;
 }
 

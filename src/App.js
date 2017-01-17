@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
 import logo from './logo.svg';
 import './App.css';
 import articles from '../articles.json' 
 import Article from './Article.js'
 import $ from 'jquery'; 
+import arrow from './arrow_white.png'
 
 class App extends Component {
 
@@ -26,12 +29,19 @@ class App extends Component {
 
   }
 
+  scrollToBottom() {
+    console.log("scrollto bottom")
+    $("html, body").animate({ scrollTop: $(document).height()-$(window).height() });
+
+  }
+
+
   componentWillMount(){
     console.log("mounted",this.state)
     
 
     $(window).scroll(()=> {   
-       if($(window).scrollTop() + $(window).height() >= $(document).height()*.95) {
+       if($(window).scrollTop() + $(window).height() >= $(document).height()*.99) {
           this.setState({articleNo:this.state.articleNo+1})
            console.log("bottom",this.state)
        }
@@ -53,6 +63,10 @@ class App extends Component {
         </div>
         <div className="port">
           {list}          
+        </div>
+        <img className="arrow" src={arrow} onClick={this.scrollToBottom.bind(this)}/>
+        <div id="bottom" className="bottom" ref="bottom">
+          end of page
         </div>
       </div>
     );
